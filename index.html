@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aasra Connect - Community Mental Health & Suicide Prevention (India)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and accessibility adjustments */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .pulse-subtle {
+            animation: pulse-slow 3s infinite;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <header class="bg-rose-600 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-2.5 flex flex-col md:flex-row justify-between items-center text-sm font-medium">
+            <div class="flex items-center space-x-2 mb-1 md:mb-0">
+                <i class="fa-solid fa-triangle-exclamation text-rose-200 animate-bounce"></i>
+                <span>In crisis? Immediate free 24/7 support in India:</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 text-xs md:text-sm">
+                <a href="tel:14416" class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition flex items-center gap-1.5 font-semibold">
+                    <i class="fa-solid fa-phone"></i> Tele-MANAS: 14416 / 1800-891-4416
+                </a>
+                <a href="tel:18005990019" class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone"></i> KIRAN: 1800-599-0019
+                </a>
+                <a href="tel:9999666555" class="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone"></i> Vandrevala: 9999-666-555
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white border-b border-slate-200 sticky top-12 md:top-10 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-xl bg-teal-600 flex items-center justify-center text-white font-bold text-xl shadow-inner">
+                    <i class="fa-solid fa-hands-holding-child"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-lg text-teal-900 tracking-tight">Aasra Connect</span>
+                    <span class="block text-[10px] text-slate-500 font-medium tracking-wide">COMMUNITY SUICIDE PREVENTION & CARE</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="#home" class="hover:text-teal-600 transition">Home</a>
+                <a href="#crisis" class="hover:text-rose-600 transition text-rose-600 font-semibold">Crisis Help</a>
+                <a href="#resources" class="hover:text-teal-600 transition">Warning Signs & Help</a>
+                <a href="#community" class="hover:text-teal-600 transition">Support Groups</a>
+                <a href="#get-involved" class="hover:text-teal-600 transition">Get Involved</a>
+            </div>
+
+            <div class="hidden md:block">
+                <a href="#crisis" class="bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium px-4 py-2 rounded-xl shadow-sm transition">
+                    Find Support Now
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-600 hover:text-slate-900 focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-3 shadow-lg">
+            <a href="#home" class="block text-slate-700 font-medium hover:text-teal-600 py-1">Home</a>
+            <a href="#crisis" class="block text-rose-600 font-semibold py-1">Crisis Help & Hotlines</a>
+            <a href="#resources" class="block text-slate-700 font-medium hover:text-teal-600 py-1">Warning Signs & Help</a>
+            <a href="#community" class="block text-slate-700 font-medium hover:text-teal-600 py-1">Support Groups</a>
+            <a href="#get-involved" class="block text-slate-700 font-medium hover:text-teal-600 py-1">Get Involved</a>
+            <div class="pt-2">
+                <a href="#crisis" class="block text-center bg-teal-600 text-white font-medium py-2 rounded-xl">Find Support Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <section id="home" class="relative overflow-hidden bg-gradient-to-b from-teal-50/60 via-slate-50 to-slate-50 py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6 text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 bg-teal-100 text-teal-800 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase">
+                            <i class="fa-solid fa-heart-pulse"></i> You matter. Your life has value.
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
+                            You are not alone. <span class="text-teal-600">Support is here.</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 max-w-xl mx-auto md:mx-0 leading-relaxed">
+                            A community-driven mental health and suicide prevention initiative across India. We bridge the gap between isolation and compassionate care through peer support, education, and accessible crisis pathways.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
+                            <a href="#crisis" class="w-full sm:w-auto bg-rose-600 hover:bg-rose-700 text-white font-semibold px-6 py-3.5 rounded-xl shadow-md transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-phone-volume"></i> Get Immediate Crisis Help
+                            </a>
+                            <a href="#resources" class="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-700 font-semibold px-6 py-3.5 rounded-xl border border-slate-300 shadow-sm transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-book-open"></i> Learn Warning Signs
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative flex justify-center">
+                        <div class="w-full max-w-md bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-100 space-y-6 relative">
+                            <div class="absolute -top-4 -right-4 bg-teal-500 text-white p-3 rounded-2xl shadow-lg">
+                                <i class="fa-solid fa-shield-heart text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 border-b pb-4">Quick India Helpline Directory</h3>
+                            <div class="space-y-4">
+                                <div class="p-3.5 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-between">
+                                    <div>
+                                        <p class="font-bold text-teal-900 text-sm">Tele-MANAS (Govt. of India)</p>
+                                        <p class="text-xs text-teal-700">24/7 Free Mental Health Support</p>
+                                    </div>
+                                    <a href="tel:14416" class="bg-teal-600 text-white px-3.5 py-2 rounded-xl text-xs font-semibold hover:bg-teal-700 shadow-sm transition">
+                                        Call 14416
+                                    </a>
+                                </div>
+                                <div class="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-between">
+                                    <div>
+                                        <p class="font-bold text-indigo-900 text-sm">KIRAN Helpline</p>
+                                        <p class="text-xs text-indigo-700">Ministry of Social Justice</p>
+                                    </div>
+                                    <a href="tel:18005990019" class="bg-indigo-600 text-white px-3.5 py-2 rounded-xl text-xs font-semibold hover:bg-indigo-700 shadow-sm transition">
+                                        Call Helpline
+                                    </a>
+                                </div>
+                                <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-100 flex items-center justify-between">
+                                    <div>
+                                        <p class="font-bold text-amber-900 text-sm">Vandrevala Foundation</p>
+                                        <p class="text-xs text-amber-700">Crisis Counseling & Support</p>
+                                    </div>
+                                    <a href="tel:9999666555" class="bg-amber-600 text-white px-3.5 py-2 rounded-xl text-xs font-semibold hover:bg-amber-700 shadow-sm transition">
+                                        Call Support
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="text-[11px] text-slate-400 text-center italic">All calls are confidential and handled by trained professionals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="crisis" class="py-16 bg-white border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                    <span class="text-rose-600 font-bold uppercase tracking-wider text-xs bg-rose-50 px-3 py-1 rounded-full">Immediate Crisis Support</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Verified Helplines in India</h2>
+                    <p class="text-slate-600">If you or someone you know is going through a difficult time or experiencing thoughts of self-harm, please reach out to any of these verified free services right now.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Helpline Card 1 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col justify-between hover:border-teal-500 transition">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-xl">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-900">Tele-MANAS</h3>
+                            <p class="text-xs text-slate-500 font-medium">National Tele Mental Health Program</p>
+                            <p class="text-sm text-slate-600">24/7 free counseling by psychologists and psychiatrists in multiple regional Indian languages.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200">
+                            <a href="tel:14416" class="block w-full text-center bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2.5 rounded-xl text-sm transition">
+                                <i class="fa-solid fa-phone mr-1.5"></i> 14416 / 1800-891-4416
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Helpline Card 2 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col justify-between hover:border-indigo-500 transition">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xl">
+                                <i class="fa-solid fa-hands-holding"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-900">KIRAN</h3>
+                            <p class="text-xs text-slate-500 font-medium">Govt. Mental Health Helpline</p>
+                            <p class="text-sm text-slate-600">Offering early screening, psychological first aid, and crisis management support across India.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200">
+                            <a href="tel:18005990019" class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-xl text-sm transition">
+                                <i class="fa-solid fa-phone mr-1.5"></i> 1800-599-0019
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Helpline Card 3 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col justify-between hover:border-amber-500 transition">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xl">
+                                <i class="fa-solid fa-heart-circle-bolt"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-900">Vandrevala Foundation</h3>
+                            <p class="text-xs text-slate-500 font-medium">24/7 Crisis Helpline</p>
+                            <p class="text-sm text-slate-600">Dedicated mental health helpline providing free, confidential support for emotional distress and depression.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200">
+                            <a href="tel:9999666555" class="block w-full text-center bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2.5 rounded-xl text-sm transition">
+                                <i class="fa-solid fa-phone mr-1.5"></i> 9999-666-555
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Helpline Card 4 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col justify-between hover:border-emerald-500 transition">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl">
+                                <i class="fa-solid fa-users-line"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-900">AASRA</h3>
+                            <p class="text-xs text-slate-500 font-medium">Suicide Prevention Helpline</p>
+                            <p class="text-sm text-slate-600">A crisis support center for the hopeless, distressed, and suicidal. Confidential listening services.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-200">
+                            <a href="tel:919820466726" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-xl text-sm transition">
+                                <i class="fa-solid fa-phone mr-1.5"></i> +91 98204-66726
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="py-16 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                    <span class="text-teal-600 font-bold uppercase tracking-wider text-xs bg-teal-100 px-3 py-1 rounded-full">Education & Awareness</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Recognizing Distress & How to Help</h2>
+                    <p class="text-slate-600">Suicide prevention begins with community awareness. Learning the warning signs and knowing how to listen can save a life.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1: Warning Signs -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Warning Signs to Watch For</h3>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-xmark text-rose-500 mt-1"></i>
+                                <span>Expressing feelings of hopelessness, worthlessness, or being a burden.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-xmark text-rose-500 mt-1"></i>
+                                <span>Sudden withdrawal from friends, family, and social activities.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-xmark text-rose-500 mt-1"></i>
+                                <span>Giving away prized possessions or talking about final goodbyes.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-xmark text-rose-500 mt-1"></i>
+                                <span>Drastic changes in mood, sleep patterns, or appetite.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: Active Listening -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-ear-listen"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">How to Listen with Empathy</h3>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-teal-500 mt-1"></i>
+                                <span><strong>Ask directly:</strong> Don't be afraid to ask, "Are you having thoughts of suicide?" Asking does not plant the idea.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-teal-500 mt-1"></i>
+                                <span><strong>Listen without judgment:</strong> Allow them to speak freely without interrupting or minimizing their pain.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-teal-500 mt-1"></i>
+                                <span><strong>Validate emotions:</strong> Acknowledge how hard things are right now for them.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3: Next Steps & Safety -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-hand-holding-medical"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Guiding Them to Professional Care</h3>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-arrow-right text-indigo-500 mt-1"></i>
+                                <span>Stay with the person or ensure they are not left alone in immediate crisis.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-arrow-right text-indigo-500 mt-1"></i>
+                                <span>Help them dial a crisis helpline like Tele-MANAS (14416) together.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-arrow-right text-indigo-500 mt-1"></i>
+                                <span>Connect them with local counselors, hospitals, or trusted family members.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="py-16 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <span class="text-teal-600 font-bold uppercase tracking-wider text-xs bg-teal-100 px-3 py-1 rounded-full">Community Network</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Safe Peer Support Groups Across India</h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            Healing happens in connection. Our community peer support circles provide a confidential, non-judgmental space to share experiences, learn coping mechanisms, and support one another through life's challenges.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-teal-100 text-teal-700 flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Weekly Online Circles</h4>
+                                    <p class="text-xs text-slate-600">Virtual safe-space meetings facilitated by trained mental health advocates every Saturday.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-teal-100 text-teal-700 flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Local Neighborhood Meetups</h4>
+                                    <p class="text-xs text-slate-600">Community center gatherings in selected cities to talk openly about emotional wellbeing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sign-up / Inquiry Card -->
+                    <div id="get-involved" class="bg-slate-50 border border-slate-200 p-8 rounded-3xl shadow-sm">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Join a Support Circle or Volunteer</h3>
+                        <p class="text-sm text-slate-600 mb-6">Fill out this quick form and our community coordinator will connect you with a local session or volunteer training.</p>
+                        
+                        <form id="community-form" class="space-y-4" onsubmit="handleFormSubmit(event)">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Your Full Name</label>
+                                <input type="text" id="name" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 text-sm" placeholder="Enter your name">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Email or Phone Number</label>
+                                <input type="text" id="contact" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 text-sm" placeholder="email@example.com or 9876543210">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">I am interested in:</label>
+                                <select id="interest" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500 text-sm bg-white">
+                                    <option value="peer-support">Joining a Peer Support Group</option>
+                                    <option value="volunteer">Becoming a Community Volunteer</option>
+                                    <option value="workshop">Attending Mental Health Awareness Workshops</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-xl text-sm shadow-md transition">
+                                Submit Request
+                            </button>
+                            <p id="form-success" class="hidden text-center text-xs text-emerald-600 font-semibold pt-2">Thank you! We have received your request and will get in touch safely.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-lg bg-teal-600 flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-hands-holding-child text-sm"></i>
+                        </div>
+                        <span class="font-bold text-white text-lg">Aasra Connect India</span>
+                    </div>
+                    <p class="text-sm text-slate-400 max-w-sm">
+                        A grassroots community initiative dedicated to de-stigmatizing mental health, training gatekeepers, and providing compassionate suicide prevention resources across India.
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <h4 class="text-white font-semibold text-sm">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#crisis" class="hover:text-white transition">Crisis Helplines</a></li>
+                        <li><a href="#resources" class="hover:text-white transition">Warning Signs</a></li>
+                        <li><a href="#community" class="hover:text-white transition">Support Groups</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <h4 class="text-white font-semibold text-sm">Emergency Reminder</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        If you are in immediate danger or severe distress, please call <strong class="text-white">Tele-MANAS at 14416</strong> or go to your nearest hospital emergency room.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+                <p>&copy; 2026 Aasra Connect India. Built for community mental health & suicide prevention awareness.</p>
+                <p class="mt-2 sm:mt-0">Confidential, Safe, and Non-Judgmental.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submission handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successMsg = document.getElementById('form-success');
+            successMsg.classList.remove('hidden');
+            document.getElementById('community-form').reset();
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
